@@ -3,6 +3,7 @@ const answer = process.env.ANSWER
 const port = 3001
 
 function numcheck(str) {
+  if (str === answer) return 'Congratulations!!'
   return str
     .split('')
     .slice(0, answer.length)
