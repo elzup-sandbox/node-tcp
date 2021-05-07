@@ -31,7 +31,7 @@ const server = net
         socket.write('format invalid')
         return
       }
-      const res = numcheck(ans)
+      const res = numcheck(ans.trim())
       console.log(`${res} :${name}`)
       socket.write(res)
     })
