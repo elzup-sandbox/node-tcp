@@ -1,6 +1,6 @@
 const net = require('net')
 const answer = process.env.ANSWER
-const port = 3001
+const port = process.env.PORT || 3001
 
 function numcheck(str) {
   if (str === answer) return 'Congratulations!!'

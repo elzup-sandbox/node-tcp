@@ -3,7 +3,7 @@ const host = process.env.SERVER_HOST
 
 const client = net.connect('3001', host, () => {
   console.log('connected to server')
-  client.write('hiro:HeHHHHHHHH')
+  client.write('hiro:o')
 })
 
 client.on('data', (data) => {
