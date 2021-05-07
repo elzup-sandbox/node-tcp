@@ -7,8 +7,8 @@ function numcheck(str) {
     .split('')
     .slice(0, answer.length)
     .map((c, i) => {
-      if (c === answer[i]) return 'H'
-      if (answer.includes(c)) return 'B'
+      if (c === answer[i]) return 'O'
+      if (answer.includes(c)) return 'o'
       return 'x'
     })
     .join('')
