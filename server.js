@@ -26,11 +26,16 @@ const server = net
       // YourName:try answer
 
       const [name, ans] = data.toString().split(':')
-      if (!ans) return console.log('format invalid')
+      if (!ans) {
+        console.log('format invalid')
+        socket.write('format invalid')
+        return
+      }
       const res = numcheck(ans)
       console.log(`${res} :${name}`)
       socket.write(res)
     })
+
     socket.on('close', function () {
       console.log('server-> disconnected')
     })
