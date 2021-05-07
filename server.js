@@ -1,5 +1,6 @@
 const net = require('net')
 const answer = process.env.ANSWER
+const port = 3001
 
 function numcheck(str) {
   return str
@@ -30,6 +31,6 @@ const server = net
       console.log('server-> disconnected')
     })
   })
-  .listen(3000)
+  .listen(port)
 
-console.log('listening on port 3001')
+console.log(`listening on port ${port}`)
