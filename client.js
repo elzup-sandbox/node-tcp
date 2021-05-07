@@ -1,6 +1,7 @@
 const net = require('net')
 
-const client = net.connect('3000', 'localhost', () => {
+const host = '160.16.94.225'
+const client = net.connect('3001', 'host', () => {
   console.log('connected to server')
   client.write('hiro:test')
 })

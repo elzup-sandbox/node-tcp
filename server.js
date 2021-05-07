@@ -15,19 +15,22 @@ function numcheck(str) {
 }
 
 const server = net
-  .createServer(function (conn) {
+  .createServer(function (socket) {
     console.log('server-> tcp server created')
+    socket.on('error', (err) => {
+      console.error(err.stack)
+    })
 
-    conn.on('data', function (data) {
+    socket.on('data', function (data) {
       // YourName:try answer
 
       const [name, ans] = data.toString().split(':')
       if (!ans) return console.log('format invalid')
       const res = numcheck(ans)
       console.log(`${res} :${name}`)
-      conn.write(res)
+      socket.write(res)
     })
-    conn.on('close', function () {
+    socket.on('close', function () {
       console.log('server-> disconnected')
     })
   })
